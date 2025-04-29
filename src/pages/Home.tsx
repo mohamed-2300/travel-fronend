@@ -208,7 +208,7 @@ useEffect(() => {
       >
         <div className="relative h-48 overflow-hidden">
       <img
-        src={product.images?.[0] || "/placeholder.svg"}
+        src={`http://localhost:8000/${product.images[0]}`}
         alt={product.title}
         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
@@ -267,7 +267,7 @@ useEffect(() => {
       >
         <div className="mb-4 h-20 w-20 overflow-hidden rounded-full">
       <img
-        src={agency.logo || "/placeholder.svg"}
+        src={agency.image ? `http://localhost:8000/${agency.image}` : "/placeholder.svg"}
         alt={agency.name}
         className="h-full w-full object-cover"
       />
