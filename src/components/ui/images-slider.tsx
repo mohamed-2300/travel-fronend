@@ -10,7 +10,6 @@ export const ImagesSlider = ({
   overlayClassName,
   className,
   autoplay = true,
-  direction = "up",
 }: {
   images: string[];
   children: React.ReactNode;
@@ -18,7 +17,6 @@ export const ImagesSlider = ({
   overlayClassName?: string;
   className?: string;
   autoplay?: boolean;
-  direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -96,18 +94,11 @@ export const ImagesSlider = ({
         ease: [0.4, 0.0, 0.2, 1],
       },
     },
-    upExit: {
-      opacity: 1,
+    exit: {
+      opacity: 0,
       scale: 1,
       transition: {
-        duration: 2,
-      },
-    },
-    downExit: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 2,
+        duration: 3,
       },
     },
   };
@@ -138,7 +129,7 @@ export const ImagesSlider = ({
             src={loadedImages[currentIndex]}
             initial="initial"
             animate="visible"
-            exit={direction === "up" ? "upExit" : "downExit"}
+            exit="exit"
             variants={slideVariants}
             className="image h-full w-full absolute inset-0 object-cover object-center"
             style={{ willChange: "transform" }}

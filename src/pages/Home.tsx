@@ -59,10 +59,26 @@ const Home = () => {
   }, []);
 
   const images = [
-    "https://images.unsplash.com/photo-1485433592409-9018e83a1f0d?q=80&w=1814&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1483982258113-b72862e6cff6?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1482189349482-3defd547e0e9?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "./a.jpg",
+    "./b.jpg",
+    "./c.jpg",
+    "./d.jpg",
+    "./e.jpg",
   ];
+
+  const textContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const textItem = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
+};
 
   return (
     <div className="flex flex-col gap-16 pb-16">
@@ -71,24 +87,48 @@ const Home = () => {
     
       <ImagesSlider className="h-screen" images={images}>
         <section className="z-50 relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden py-20 text-center lg:min-h-[90vh]">
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <motion.div
+          variants={textContainer}
+          initial="hidden"
+          animate="show"
+          className="space-y-4"
+        >
+          <motion.h1
+            variants={textItem}
+            className="font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl"
+          >
+            Votre voyage spirituel{" "}
+            <span className="text-noor-gold">commence ici</span>
+          </motion.h1>
 
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <h1 className="font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            Votre voyage spirituel <span className="text-noor-gold">commence ici</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl">
+          <motion.p
+            variants={textItem}
+            className="mx-auto mt-6 max-w-2xl text-lg text-gray-300 md:text-xl"
+          >
             Trouvez les meilleures offres pour votre Omra ou Hajj avec des agences fiables et des services de qualité
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-noor-gold text-noor-dark hover:bg-noor-gold-dark">
-              <Link to="/products">Découvrir les offres</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-noor-gold text-noor-gold hover:bg-noor-gold/10 hover:text-noor-gold">
-              <Link to="/agencies">Voir les agences</Link>
-            </Button>
-          </div>
+          </motion.p>
+        </motion.div>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button
+            asChild
+            size="lg"
+            className="bg-noor-gold text-noor-dark hover:bg-noor-gold-dark"
+          >
+            <Link to="/products">Découvrir les offres</Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="border-noor-gold text-noor-gold hover:bg-noor-gold/10 hover:text-noor-gold"
+          >
+            <Link to="/agencies">Voir les agences</Link>
+          </Button>
         </div>
-      </section>
+      </div>
+    </section>
       </ImagesSlider>
 
 
