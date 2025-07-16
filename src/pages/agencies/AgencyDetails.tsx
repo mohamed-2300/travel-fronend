@@ -216,7 +216,7 @@ const AgencyDetails = () => {
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
-                      src={`http://localhost:8000/storage/${product.images[0]}`} 
+                      src={`http://localhost:8000/${product.images[0]}`} 
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute top-3 right-3 rounded-full bg-noor-gold px-3 py-1 text-xs font-medium text-noor-dark">

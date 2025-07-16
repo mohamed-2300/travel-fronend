@@ -120,7 +120,6 @@ const ProductDetails = () => {
                   className="h-full w-full rounded-lg object-cover"
                 /> 
               </div>
-              <Button onClick={()=>console.log(`http://localhost:8000/${product.images[0]}`)}>test</Button>
               {product.images.length > 1 && (
                 <>
                   <div className="h-40">
