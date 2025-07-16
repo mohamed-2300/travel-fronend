@@ -67,15 +67,11 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-16 pb-16">
       {/* Hero Section */}
-      {/* <section className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden bg-noor-dark py-20 text-center lg:min-h-[90vh]">
-        <div className="absolute inset-0 z-0">
-          <div 
-            className="h-full w-full bg-cover bg-center bg-no-repeat opacity-30" 
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1920&h=1080')" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-noor-dark/70 via-noor-dark/60 to-noor-dark"></div>
-        </div>
-        
+      
+    
+      <ImagesSlider className="h-screen" images={images}>
+        <section className="z-50 relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden py-20 text-center lg:min-h-[90vh]">
+
         <div className="container relative z-10 mx-auto px-4 md:px-6">
           <h1 className="font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl">
             Votre voyage spirituel <span className="text-noor-gold">commence ici</span>
@@ -92,32 +88,13 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </section> */}
-    
-      <ImagesSlider className="h-screen" images={images}>
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: -80,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 2,
-          }}
-          className="z-50 flex flex-col justify-center items-center"
-        >
-          <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-            The hero section slideshow <br /> nobody asked for
-          </motion.p>
-          <button className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4">
-            <span>Join now →</span>
-            <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
-          </button>
-        </motion.div>
+      </section>
       </ImagesSlider>
+
+
+
+
+
       {/* Values Section */}
       <section className="container mx-auto px-4 py-12 md:px-6">
         <h2 className="mb-12 text-center font-serif text-3xl font-bold text-noor-gold md:text-4xl">
@@ -162,6 +139,10 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
+
+
       {/* Featured Products */}
       <section className="container mx-auto px-4 py-12 md:px-6">
         <div className="mb-8 flex items-center justify-between">
@@ -225,6 +206,11 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+
+
+
+
       {/* Featured Agencies */}
       <section className="container mx-auto px-4 py-12 md:px-6">
         <div className="mb-8 flex items-center justify-between">
@@ -277,6 +263,9 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+
+       
       {/* FAQ Section */}
       <section className="container mx-auto px-4 py-12 md:px-6">
         <h2 className="mb-12 text-center font-serif text-3xl font-bold text-noor-gold md:text-4xl">
