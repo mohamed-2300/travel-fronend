@@ -45,7 +45,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/products/${id}`);
+        const response = await fetch(`https://travel-app-0f8mh.sevalla.app/api/products/${id}`);
         if (!response.ok) throw new Error('Produit non trouvé');
         
         const data = await response.json();
@@ -115,7 +115,7 @@ const ProductDetails = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="col-span-full h-80 sm:h-96">
                 <img
-                  src={`http://localhost:8000/${product.images[0]}`}
+                  src={`https://travel-app-0f8mh.sevalla.app/${product.images[0]}`}
                   alt={product.title}
                   className="h-full w-full rounded-lg object-cover"
                 /> 
@@ -124,14 +124,14 @@ const ProductDetails = () => {
                 <>
                   <div className="h-40">
                     <img
-                      src={`http://localhost:8000/${product.images[1]}`}
+                      src={`https://travel-app-0f8mh.sevalla.app//${product.images[1]}`}
                       alt={product.title}
                       className="h-full w-full rounded-lg object-cover"
                     />
                   </div>
                   <div className="h-40">
                     <img
-                      src={`http://localhost:8000/${product.images[2]}`}
+                      src={`https://travel-app-0f8mh.sevalla.app//${product.images[2]}`}
                       alt={product.title}
                       className="h-full w-full rounded-lg object-cover"
                     />
@@ -292,7 +292,7 @@ const ProductDetails = () => {
               <div className="flex flex-col items-center text-center">
                 <div className="mb-3 h-16 w-16 overflow-hidden rounded-full">
                   <img
-                    src={product.agency.image || "/placeholder-agency.jpg"}
+                    src={`https://travel-app-0f8mh.sevalla.app/${product.agency.image}` || "/placeholder-agency.jpg"}
                     alt={product.agency.name}
                     className="h-full w-full object-cover"
                   />

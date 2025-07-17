@@ -26,7 +26,7 @@ const AgenciesList = () => {
   useEffect(() => {
     const fetchAgencies = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/agencies');
+        const response = await fetch('https://travel-app-0f8mh.sevalla.app/api/agencies');
         if (!response.ok) {
           throw new Error('Erreur lors du chargement des agences');
         }
@@ -95,7 +95,7 @@ const AgenciesList = () => {
             <div className="flex flex-col items-center p-6 text-center">
               <div className="mb-4 h-20 w-20 overflow-hidden rounded-full">
                 <img
-                  src={agency.image ? `http://localhost:8000/${agency.image}` : "/placeholder.svg"}
+                  src={agency.image ? `https://travel-app-0f8mh.sevalla.app/${agency.image}` : "/placeholder.svg"}
                   alt={agency.name}
                   className="h-full w-full object-cover"
                 />

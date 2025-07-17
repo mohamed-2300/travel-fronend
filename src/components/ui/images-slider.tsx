@@ -72,7 +72,7 @@ export const ImagesSlider = ({
     if (autoplay) {
       interval = setInterval(() => {
         handleNext();
-      }, 5000);
+      }, 6000);
     }
 
     return () => {
@@ -82,26 +82,29 @@ export const ImagesSlider = ({
   }, []);
 
   const slideVariants = {
-    initial: {
-      opacity: 0,
-      scale: 1,
+  initial: {
+    opacity: 0,
+    scale: 1,
+  },
+  visible: {
+  opacity: 1,
+  scale: 1.05,
+  x: [0, 20], // pan right
+  transition: {
+    duration: 6,
+    ease: "easeInOut",
+  },
+},
+  exit: {
+    opacity: 0,
+    scale: 1.08,
+    transition: {
+      duration: 3,
+      ease: "easeInOut",
     },
-    visible: {
-      opacity: 1,
-      scale: 1.1,
-      transition: {
-        duration: 3,
-        ease: [0.4, 0.0, 0.2, 1],
-      },
-    },
-    exit: {
-      opacity: 0,
-      scale: 1,
-      transition: {
-        duration: 3,
-      },
-    },
-  };
+  },
+};
+
 
   const areImagesLoaded = loadedImages.length > 0;
 

@@ -48,22 +48,21 @@ const Home = () => {
   // Fetch products and agencies data from the API
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/products")
+      .get("https://travel-app-0f8mh.sevalla.app/api/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Erreur produits:", err));
 
     axios
-      .get("http://localhost:8000/api/agencies")
+      .get("https://travel-app-0f8mh.sevalla.app/api/agencies")
       .then((res) => setAgencies(res.data))
       .catch((err) => console.error("Erreur agences:", err));
   }, []);
 
   const images = [
-    "./a.jpg",
-    "./b.jpg",
-    "./c.jpg",
-    "./d.jpg",
-    "./e.jpg",
+    "./a.webp",
+    "./b.webp",
+    "./c.webp",
+    "./d.webp",
   ];
 
   const textContainer = {
@@ -208,7 +207,7 @@ const textItem = {
             >
               <div className="relative h-48 overflow-hidden">
                 <img
-                  src={`http://localhost:8000/${product.images[0]}`}
+                  src={`https://travel-app-0f8mh.sevalla.app/${product.images[0]}`}
                   alt={product.title}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
@@ -278,7 +277,7 @@ const textItem = {
                 <img
                   src={
                     agency.image
-                      ? `http://localhost:8000/${agency.image}`
+                      ? `https://travel-app-0f8mh.sevalla.app/${agency.image}`
                       : "/placeholder.svg"
                   }
                   alt={agency.name}

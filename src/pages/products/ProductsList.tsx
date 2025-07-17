@@ -64,7 +64,7 @@ const ProductsList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/products');
+        const response = await fetch('https://travel-app-0f8mh.sevalla.app/api/products');
         if (!response.ok) throw new Error('Erreur de chargement des produits');
         
         const data = await response.json();
@@ -341,7 +341,7 @@ const ProductsList = () => {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <img
-                      src={`http://localhost:8000/${product.images[0]}`}
+                      src={`https://travel-app-0f8mh.sevalla.app/${product.images[0]}`}
                       alt={product.title}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />

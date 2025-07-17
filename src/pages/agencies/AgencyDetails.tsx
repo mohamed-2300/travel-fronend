@@ -51,13 +51,13 @@ const AgencyDetails = () => {
     const fetchData = async () => {
       try {
         // Fetch agency details
-        const agencyResponse = await fetch(`http://localhost:8000/api/agencies/${id}`);
+        const agencyResponse = await fetch(`https://travel-app-0f8mh.sevalla.app/api/agencies/${id}`);
         if (!agencyResponse.ok) throw new Error("Agence non trouvée");
         const agencyData = await agencyResponse.json();
         setAgency(agencyData);
 
         // Fetch agency products
-        const productsResponse = await fetch(`http://localhost:8000/api/products?agency_id=${id}`);
+        const productsResponse = await fetch(`https://travel-app-0f8mh.sevalla.app/api/products?agency_id=${id}`);
         const productsData = await productsResponse.ok ? await productsResponse.json() : [];
         setProducts(productsData);
 
@@ -84,7 +84,7 @@ const AgencyDetails = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(`http://localhost:8000/api/contact`, {
+      const response = await fetch(`https://travel-app-0f8mh.sevalla.app/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ const AgencyDetails = () => {
       <div className="mb-12 text-center">
         <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full">
           <img
-            src={agency.image ? `http://localhost:8000/${agency.image}` : "/placeholder.svg"}
+            src={agency.image ? `https://travel-app-0f8mh.sevalla.app/${agency.image}` : "/placeholder.svg"}
             alt={agency.name}
             className="h-full w-full object-cover"
           />
@@ -216,7 +216,7 @@ const AgencyDetails = () => {
                 >
                   <div className="relative h-40 overflow-hidden">
                     <img
-                      src={`http://localhost:8000/${product.images[0]}`} 
+                      src={`https://travel-app-0f8mh.sevalla.app/${product.images[0]}`} 
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute top-3 right-3 rounded-full bg-noor-gold px-3 py-1 text-xs font-medium text-noor-dark">

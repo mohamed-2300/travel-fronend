@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-16 md:px-6">
+    <div className="container mx-auto px-4 py-16 mt-10 md:px-6">
       <section className="mb-16">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 font-serif text-4xl font-bold text-noor-gold md:text-5xl">
@@ -16,10 +16,10 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="mb-16 grid gap-12 md:grid-cols-2">
+      <section className="mb-20 grid gap-12 md:grid-cols-2">
         <div className="relative overflow-hidden rounded-lg">
           <img
-            src="https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=800"
+            src="./a.webp"
             alt="La Kaaba à La Mecque"
             className="h-full w-full object-cover"
           />
